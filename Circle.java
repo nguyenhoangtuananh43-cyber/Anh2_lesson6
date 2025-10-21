@@ -1,9 +1,7 @@
-package LopTron;
+package HinhHoc;
 
-public class Circle {
+public class Circle extends Shape {
     private double radius = 1.0;
-    private String color = "red";
-
 
     public Circle() {
     }
@@ -11,9 +9,10 @@ public class Circle {
     public Circle(double radius) {
         this.radius = radius;
     }
-    public Circle(double radius, String color) {
+
+    public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
         this.radius = radius;
-        this.color = color;
     }
 
     public double getRadius() {
@@ -22,14 +21,6 @@ public class Circle {
 
     public void setRadius(double radius) {
         this.radius = radius;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public double getArea() {
@@ -42,6 +33,9 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle[radius=" + radius + ", color=" + color + "]";
+        return "A Circle with radius="
+                + getRadius()
+                + ", which is a subclass of "
+                + super.toString();
     }
 }
